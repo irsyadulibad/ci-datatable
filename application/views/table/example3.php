@@ -1,6 +1,6 @@
 <!--
 - Source code by: Ahmad Irsyadul Ibad
-- Visit my site on: http://irsyadulibad.cf (if still available)
+- Visit my site on: http://irsyadulibad.my.id
 - Github: https://github.com/irsyadulibad
 
 - Silahkan dikembangkan agar lebih baik kedepannya
@@ -19,6 +19,6 @@
 			</tbody>
 		</table>
 	</div>
-	<a class="btn btn-sm btn-success font-weight-bold float-right mt-4" href="<?= base_url('table/'); ?>">Example 1	&raquo</a>
+	<a class="btn btn-sm btn-success font-weight-bold float-right mt-4" href="<?= base_url('table/'); ?>">Example 4	&raquo</a>
 	<a class="btn btn-sm btn-primary font-weight-bold float-left mt-4" href="<?= base_url('table/example2'); ?>">&laquo	Example 2</a>
 </div>

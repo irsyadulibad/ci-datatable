@@ -14,5 +14,6 @@
 	<script type="text/javascript" src="<?= base_url('assets/js/example1.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/example2.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/example3.js'); ?>"></script>
+	<script type="text/javascript" src="<?= base_url('assets/js/example4.js'); ?>"></script>
 </body>
 </html>

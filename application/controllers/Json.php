@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No Direct Script Access Allowed');
 class Json extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
-		$this->load->library('datatable');
+		$this->load->library('Datatables', 'datatables');
 	}
 	
 	public function example1(){
@@ -14,7 +14,7 @@ class Json extends CI_Controller{
 | $this->datatable->process('Nama Table');
 */
 		header('Content-Type: application/json');
-		echo $this->datatable->process('peoples');
+		echo $this->datatables->table('peoples')->draw();
 	}
 	
 	public function example2(){
@@ -37,8 +37,8 @@ class Json extends CI_Controller{
 | 			Anda juga bisa memfilter banyak kolom sekaligus
 |			dengan menambah elemen array
 */
-		$this->datatable->where(['id' => 3]);
-		echo $this->datatable->process('peoples');
+		$this->datatables->table('peoples')->where(['id' => 3]);
+		echo $this->datatables->draw();
 	}
 	
 	public function example3(){
@@ -51,8 +51,24 @@ class Json extends CI_Controller{
 | Note: Fungsi ini hanya menerima parameter string saja
 | 			Jangan mengirim parameter selain string
 */
-		$this->datatable->select('id, name, address');
-		echo $this->datatable->process('peoples');
+		$this->datatables->table('peoples')->select('id, name, address');
+		echo $this->datatables->draw();
+	}
+
+	public function example4(){
+/*
+| Select As
+*/
+		$this->datatables->table('peoples as pe');
+		$this->datatables->select('pe.id, pe.name as name, pa.name as parent');
+
+/*
+| Join Clause
+| $this->datatables->join('table', 'condition', 'type')
+| By default parameter type adalah null, anda bisa menambahkan INNER JOIN dll
+*/
+		$this->datatables->join('parents as pa', 'pe.id = pa.user_id');
+		echo $this->datatables->draw();
 	}
 }
 ?>

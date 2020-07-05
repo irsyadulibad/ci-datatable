@@ -26,5 +26,13 @@ class Table extends CI_Controller{
 		$this->load->view('table/example3', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function example4(){
+		$data['title'] = 'Server Side Datatables | Example 04';
+		
+		$this->load->view('templates/header', $data);
+		$this->load->view('table/example4', $data);
+		$this->load->view('templates/footer');
+	}
 }
 ?>

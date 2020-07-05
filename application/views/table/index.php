@@ -21,6 +21,6 @@
 	</div>
 	<div class="mt-3">
 		<a class="btn btn-sm btn-success font-weight-bold float-right mt-4" href="<?= base_url('table/example2'); ?>">Example 2	&raquo</a>
-		<a class="btn btn-sm btn-primary font-weight-bold float-left mt-4" href="<?= base_url('table/example3'); ?>">&laquo	Example 3</a>
+		<a class="btn btn-sm btn-primary font-weight-bold float-left mt-4" href="<?= base_url('table/example4'); ?>">&laquo	Example 4</a>
 	</div>
 </div>
