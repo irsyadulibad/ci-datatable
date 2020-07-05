@@ -1,22 +1,22 @@
-# ci-datatable
-CodeIgniter Datatable's Library
+# ci-datatables
+CodeIgniter 3 datatables's Library
 
 <br/>
 
 ## Deskripsi
 
-Library untuk membuat Server Side Datatable agar menjadi **mudah** dan **singkat**
+Library untuk membuat Server Side datatables agar menjadi **mudah** dan **singkat**
 
 
 Persyaratan:
 * Codeigniter 3
 * JQuery 3.3 +
-* Datatable 1.10+  (tersedia pada folder ```/application/assets/js/```)
+* datatables 1.10+  (tersedia pada folder ```/application/assets/js/```)
 
 
 Cara Instalasi:
-* Taruh file datatable.php, (pada repositori ini terletak pada ```/application/libraries/datatable.php```)
-* Pada controller load dulu library ci-datatable ( ```$this->load->library('datatable'); ```)
+* Taruh file datatables.php, (pada repositori ini terletak pada ```/application/libraries/Datatables.php```)
+* Pada controller load dulu library ci-datatables ( ```$this->load->library('Datatables', 'datatables'); ```)
 
 Untuk contoh:
 * Bisa lihat file ```/application/controllers/Json.php```
@@ -27,22 +27,33 @@ Untuk contoh:
 
 #### PHP (CodeIgniter)
 
-1. **Get All**\
-  Memilih data pada semua kolom untuk ditampilkan **$this->datatable->process(nama_table)** :
+1. **Select Table**\
+  Memilih table default **$this->datatables->table(nama_table)** :
   ```php
-  echo $this->datatable->process($table);
+  echo $this->datatables->table();
   ```
-2. **Select Field**\
-  Menampilkan data pada kolom yang dipilih **$this->datatable->select('table1, table2, tableN')** :
+2. **Get All**\
+  Memilih data pada semua kolom untuk ditampilkan **$this->datatables->draw()** :
   ```php
-  $this->datatable->select('id, name');
-  echo $this->datatable->process($table);
+  echo $this->datatables->draw();
   ```
-3. **Where Clause**\
-  Menampilkan data yang telah ditentukan valuenya pada kolom teretentu **$this->datatable->where(array('field' => 'data')** :
+3. **Select Field**\
+  Menampilkan data pada kolom yang dipilih **$this->datatables->select('table1, table2, tableN')** :
   ```php
-  $this->datatable->where(['field' => 'data']);
-  echo $this->datatable->process($table);
+  $this->datatables->select('id, name');
+  echo $this->datatables->draw();
+  ```
+4. **Where Clause**\
+  Menampilkan data yang telah ditentukan valuenya pada kolom teretentu **$this->datatables->where(array('field' => 'data')** :
+  ```php
+  $this->datatables->where(['field' => 'data']);
+  echo $this->datatables->draw();
+  ```
+5. **Join Clause**\
+  Memilih dan menggabungkan kolom dari table lain sesuai dengan kondisi yang telah ditentukan **$this->datatables->join(table, condition, type[optional])** :
+  ```php
+  $this->datatables->where('peoples', 'peoples.id = parent.user_id', 'INNER JOIN');
+  echo $this->datatables->draw();
   ```
 <br/>
 
@@ -67,7 +78,7 @@ Untuk menampilkan data dari struktur tabel pada kode HTML di atas :
 $(document).ready(function(){
 	var baseUrl = $('#base-url').data('url'); //Mengambil data value base_url dri elemen html
 	var table = $('#table-example3');
-	table.DataTable({
+	table.datatables({
 		'processing': true,
 		'serverSide': true,
 		'ordering': true, //set true agar bisa sorting
@@ -98,7 +109,11 @@ Untuk melihat contoh lain silahkan clone/download repositori ini untuk dijalanka
 #### Catatan
 * Anda juga dapat menambahkan clausa *AND WHERE* dengan menambahkan elemen array:
 ```php
-$this->datatable->where(['field1' => 'data1', 'field2' => 'data2', 'fieldN' => 'dataN']);
+$this->datatables->where(['field1' => 'data1', 'field2' => 'data2', 'fieldN' => 'dataN']);
+```
+* Anda juga dapat melakukan select as dengan contoh sebagai berikut:
+```php
+$this->datatables->select('user.name as uname');
 ```
 * Anda dapat menambahkan header agar data yang ditampilkan dapat dipastikan tipenya adalah JSON (optional) :
 ```php
@@ -109,5 +124,5 @@ header('Content-Type': 'application/json');
 ## Author's Profile:
 
 Github: [https://github.com/irsyadulibad]\
-Website: [http://irsyadulibad.cf] (if it's still available)\
+Website: [http://irsyadulibad.my.id]\
 Facebook: [https://facebook.com/irsyadulibad.dev]
