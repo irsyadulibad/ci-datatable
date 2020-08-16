@@ -1,3 +1,8 @@
+![GitHub](https://img.shields.io/github/license/irsyadulibad/ci-datatable)
+![GitHub repo size](https://img.shields.io/github/repo-size/irsyadulibad/ci-datatable)
+![GitHub last commit](https://img.shields.io/github/last-commit/irsyadulibad/ci-datatable)
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=irsyadulibad/ci-datatable)
+
 # ci-datatables
 CodeIgniter 3 datatables's Library
 
